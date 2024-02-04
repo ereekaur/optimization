@@ -1,7 +1,7 @@
-
- Suppose we have a sparse binary matrix containing information about watched movies meaning that
-1 = watched and 0 = not watched. Our aim is to consider a problem of movie recommendation for certain user. Suppose that 100000 users have all liked
-the same particular movie. Let A be a 100000 x 1000 matrix where $A_{ij}$ tells that user i has watched the movie j. Consider
+We want to recommend movies for one user or group of users. For one user one can use cosine similarity or SVD technique to recommend movies.
+Now suppose that we want to recommend for many users simultaneously.Let us have a sparse binary matrix containing information about watched movies meaning that
+1 = watched and 0 = not watched.. Suppose that 100000 users have all liked the same particular movie. Let A be a 100000 x 1000 matrix where $A_{ij}$ tells that user
+i has watched the movie j. Consider the problem
 
 $${\color{green}
 \begin{equation*}
