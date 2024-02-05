@@ -1,6 +1,6 @@
-We want to recommend movies for one user or group of users. For one user one can use cosine similarity or SVD technique to recommend movies.
-Now suppose that we want to recommend for many users simultaneously.Let us have a sparse binary matrix containing information about watched movies meaning that
-1 = watched and 0 = not watched.. Suppose that 100000 users have all liked the same particular movie. Let A be a 100000 x 1000 matrix where $A_{ij}$ tells that user
+We want to recommend movies fora  one user or a group of users. For one user one can use cosine similarity or SVD technique to recommend movies.
+Now suppose that we want to recommend movies for multiple users simultaneously. Suppose we have a sparse binary matrix containing information about watched movies meaning that
+1 = watched and 0 = not watched. Assume also that 100000 users have all liked the same particular movie(s). Let A be a 100000 x 1000 matrix where $A_{ij}$ tells that user
 i has watched the movie j. Consider the problem
 
 $${\color{green}
@@ -28,5 +28,5 @@ towards to the solution is made within interior points. From the picture
 
 it comes clear that for our 100000 x 1000 matrix we would need ridiculous amount of time to solve the system using (revised) simplex method; interior point methods are more efficient. Here I used Python library called linprog and compared
 the Highs and Revised simplex. For a 100000 x 1000 matrix the calculation using highs took roughly one minute. Can this be reduced further? As our matrix does not have any a priori structure to take advantage it might be good idea to 
-consider matrix reordering i.e. find permutation of rows and columns which reduces fill-in when factorizing the system.
+consider some matrix reordering  i.e. find  a permutation of rows and columns which reduces fill-in when factorizing the system. One such reordering is McKee reordering.
 
